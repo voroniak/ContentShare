@@ -12,6 +12,6 @@ namespace Notes.API.Entities
         [BsonDateTimeOptions]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         [BsonDateTimeOptions]
-        public DateTime ModifiedAt { get; set; }
+        public DateTime ModifiedAt { get; set; } = DateTime.UtcNow;
     }
 }

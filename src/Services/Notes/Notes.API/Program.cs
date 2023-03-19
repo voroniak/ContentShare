@@ -18,8 +18,12 @@ builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
 });
 
+
+
 builder.Services.AddSingleton<INotesContext, NotesContext>();
 builder.Services.AddScoped<INotesRepository, NotesRepository>();
+
+builder.Services.AddOptions();
 
 builder.Services.AddControllers();
 
@@ -33,6 +37,7 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Notes.API v1"));
+
 
 app.UseAuthorization();
 
